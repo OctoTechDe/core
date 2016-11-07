@@ -41,9 +41,7 @@ const router = new VueRouter({
     { path: '/bar', component: Bar },
     { 
       path: '/users', 
-        components: {
           component: UsersIndex
-        }
     }
   ]
 })

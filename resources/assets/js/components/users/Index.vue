@@ -1,23 +1,28 @@
 <template>
     
-<table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="user in users">
-      <th></th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-  </tbody>
-</table>
+<div class="card">
+    <div class="card-header">
+        Users
+    </div>
+    <div class="card-block">
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="user in users">
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    </div>
+</div>
 
 </template>
 
@@ -26,26 +31,24 @@
 <script>
 
     export default {
-        
-        data() {
-            
+        data: function () {
             return {
                 users: []
             };
         },
 
-        ready: function() {
+        created: function () {
             this.fetchUsers();
         },
 
         methods: {
-            fetchUsers: function() {
-                this.$http.get('/api/user').then((response) => {
-                    this.users = response.data
+            fetchUsers: function () {
+                this.$http.get('/api/users')
+                        .then(response => {
+                    this.users = response.data;
                 });
-            }
+            },
         }
-
     }
 
 </script>    

@@ -13,6 +13,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 /**
+ * Import Components
+ */
+import UsersIndex from './components/users/Index.vue'
+import Example from './components/Example.vue'
+
+/**
  * Use VueRouter
  */
 Vue.use(VueRouter)
@@ -33,7 +39,12 @@ const router = new VueRouter({
   routes: [
     { path: '/foo', component: Foo },
     { path: '/bar', component: Bar },
-
+    { 
+      path: '/users', 
+        components: {
+          component: UsersIndex
+        }
+    }
   ]
 })
 

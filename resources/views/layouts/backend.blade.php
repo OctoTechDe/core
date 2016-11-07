@@ -24,7 +24,7 @@
         <div class="container-fluid">
 
             <!-- Content -->
-            @yield('content')
+            <router-view></router-view>
             <!-- End Content -->
 
         </div>

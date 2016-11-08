@@ -1,28 +1,54 @@
 <template>
+
+<div class="row">    
+
+    <div class="col-md-2">
+
+        <div class="card">
+            <div class="card-header">
+                Menu
+            </div>
+            <div class="card-block">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon-magnifier"></i></span>
+                    <input type="text" class="form-control" placeholder="Search" v-model="search">
+                </div>
+                <hr>
+                <router-link to="/users/create" class="btn btn-primary btn-block"><i class="icon-plus"></i> New User</router-link>
+            </div>
+        </div>
+
+    </div>
     
-<div class="card">
-    <div class="card-header">
-        Users
-    </div>
-    <div class="card-block">
+    <div class="col-md-10">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="user in users">
-                <td>{{ user.name }}</td>
-                <td>{{ user.email }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="card">
+            <div class="card-header">
+                Users
+            </div>
+            <div class="card-block">
+
+            <table class="table">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="user in users">
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.email }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            </div>
+        </div>
 
     </div>
-</div>
+
+</div>    
 
 </template>
 
@@ -33,6 +59,7 @@
     export default {
         data: function () {
             return {
+                search: '',
                 users: []
             };
         },
@@ -47,7 +74,7 @@
                         .then(response => {
                     this.users = response.data;
                 });
-            },
+            }
         }
     }
 

@@ -18,3 +18,9 @@
         border: 0;
     }
 }
+
+.table-no-top-border {
+    thead {
+        border-top: 0;
+    }
+}

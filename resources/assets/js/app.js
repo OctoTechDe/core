@@ -16,6 +16,7 @@ import VueRouter from 'vue-router'
  * Import Components
  */
 import UsersIndex from './components/users/Index.vue'
+import UsersCreate from './components/users/Create.vue'
 import Example from './components/Example.vue'
 
 /**
@@ -42,6 +43,10 @@ const router = new VueRouter({
     { 
       path: '/users', 
           component: UsersIndex
+    },
+    { 
+      path: '/users/create', 
+          component: UsersCreate
     }
   ]
 })

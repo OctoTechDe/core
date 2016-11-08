@@ -1445,6 +1445,9 @@ pre {
 .table-clear td {
   border: 0; }
 
+.table-no-top-border thead {
+  border-top: 0; }
+
 .form-control {
   display: block;
   width: 100%;

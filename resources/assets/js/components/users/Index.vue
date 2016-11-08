@@ -42,7 +42,7 @@
                         <td>{{ user.email }}</td>
                         <td>
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-secondary btn-sm"><i class="icon-eye"></i></button>
+                                <router-link :to="{ name: 'user', params: { id: user.id }}" class="btn btn-secondary btn-sm"><i class="icon-eye"></i></router-link>
                             </div>
                         </td>
                     </tr>

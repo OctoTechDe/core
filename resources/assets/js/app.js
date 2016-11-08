@@ -16,6 +16,7 @@ import VueRouter from 'vue-router'
  * Import Components
  */
 import UsersIndex from './components/users/Index.vue'
+import UsersShow from './components/users/Show.vue'
 import UsersCreate from './components/users/Create.vue'
 import Example from './components/Example.vue'
 
@@ -38,16 +39,23 @@ const router = new VueRouter({
   mode: 'history',
   
   routes: [
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar },
+
     { 
       path: '/users', 
-          component: UsersIndex
+      component: UsersIndex
     },
+
     { 
       path: '/users/create', 
-          component: UsersCreate
+      component: UsersCreate
+    },
+
+    {
+      path: '/users/:id',
+      name: 'user',
+      component: UsersShow
     }
+
   ]
 })
 

@@ -26,6 +26,14 @@
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter your name">
                 </div>
+                <div class="form-group">
+                    <label for="name">Email</label>
+                    <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+                <div class="alert alert-info" role="alert">
+                    <strong>Heads up!</strong> The password will be generated and can be changed after first login.
+                </div>
+                <button type="button" class="btn btn-primary">Create User</button>
             </div>
         </div>
 

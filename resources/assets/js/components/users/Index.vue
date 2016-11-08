@@ -33,12 +33,18 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="user in users">
                         <td>{{ user.name }}</td>
                         <td>{{ user.email }}</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-secondary btn-sm"><i class="icon-eye"></i></button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>

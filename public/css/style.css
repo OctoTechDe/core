@@ -1300,6 +1300,7 @@ pre {
     border-top: 1px solid #cfd8dc; }
   .table thead th {
     vertical-align: bottom;
+    border-top: 0;
     border-bottom: 2px solid #cfd8dc; }
   .table tbody + tbody {
     border-top: 2px solid #cfd8dc; }

@@ -6,7 +6,7 @@
 
         <div class="card">
             <div class="card-header">
-                Menu
+                <i class="icon-menu"></i> Menu
             </div>
             <div class="card-block">
                 <div class="input-group">
@@ -24,12 +24,12 @@
 
         <div class="card">
             <div class="card-header">
-                Users
+                <i class="icon-people"></i> Users
             </div>
             <div class="card-block">
 
-            <table class="table">
-                <thead class="thead-inverse">
+            <table class="table table-striped table-hover">
+                <thead class="thead">
                     <tr>
                         <th>Name</th>
                         <th>Email</th>

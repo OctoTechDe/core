@@ -13,23 +13,16 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 /**
- * Import Components
+ * Import Users Components
  */
 import UsersIndex from './components/users/Index.vue'
 import UsersShow from './components/users/Show.vue'
 import UsersCreate from './components/users/Create.vue'
-import Example from './components/Example.vue'
 
 /**
  * Use VueRouter
  */
 Vue.use(VueRouter)
-
-/**
- * Define components
- */
-const Foo = { template: '<div>Foo</div>' }
-const Bar = { template: '<div>Bar</div>' }
 
 /**
  * Create Router 
@@ -60,7 +53,7 @@ const router = new VueRouter({
 })
 
 /** 
- * Create Vue instance and inject router
+ * Create Vue Instance | Inject Router
 */
 new Vue({
 

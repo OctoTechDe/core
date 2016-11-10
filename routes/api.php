@@ -28,5 +28,5 @@ Route::get('/user/{id}', function (Request $request, $id) {
 })->middleware('auth:api');
 
 Route::post('users', function (Request $request) {
-    return $request;
+    return $request->username;
 })->middleware('auth:api');

@@ -24,7 +24,7 @@ import UsersCreate from './components/users/Create.vue'
  * Use VueRouter and VueForm
  */
 
-Vue.use(VueForm)
+Vue.use(VueForm, {components: true})
 Vue.use(VueRouter)
 
 /**

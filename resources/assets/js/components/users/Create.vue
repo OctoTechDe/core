@@ -74,7 +74,7 @@
   methods: {
     login() {
       // Submit the form via a POST request
-      this.form.post('api/users')
+      this.form.post('/api/users')
         .then(({data}) => console.log(data))
             }
         }

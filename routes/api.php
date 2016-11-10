@@ -27,6 +27,4 @@ Route::get('/user/{id}', function (Request $request, $id) {
     return $user;
 })->middleware('auth:api');
 
-Route::post('users', function (Request $request) {
-    return $request->username;
-})->middleware('auth:api');
+Route::post('users', 'UserController@store')->middleware('auth:api');

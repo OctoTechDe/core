@@ -24,14 +24,16 @@
             <div class="card-block">
 
             <form @submit.prevent="login" class="form-horizontal">
+                <alert-error :form="form"></alert-error>
+                <alert-success :form="form" message="Success!"></alert-success>
 
                 <div class="form-group" :class="{'has-error': form.errors.has('username')}">
                     <label for="name">Name</label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="icon-user"></i></span>
                         <input v-model="form.username" type="text" name="username" class="form-control">
-                        <has-error :form="form" field="username"></has-error>
                     </div>
+                    <has-error :form="form" field="username"></has-error>
                 </div>
                 
                 <div class="form-group" :class="{'has-error': form.errors.has('email')}">
@@ -39,14 +41,18 @@
                     <div class="input-group">
                         <span class="input-group-addon"><i class="icon-envelope"></i></span>
                         <input v-model="form.email" type="text" name="email" class="form-control">
-                        <has-error :form="form" field="email"></has-error>
                     </div>
+                    <has-error :form="form" field="email"></has-error>
                 </div>
 
                 <div class="alert alert-info" role="alert">
                     <i class="icon-info"></i> The password will be automatically generated and send to the user. The user can change the given password after first login.
                 </div>
-                <button :disabled="form.busy" type="submit" class="btn btn-primary">Log In</button>
+                <button :disabled="form.busy" type="submit" class="btn btn-primary">
+                    <i v-if="form.busy" class="fa fa-fw fa-spinner fa-spin"></i>
+                    <i v-else class="icon-plus"></i>
+                    Log In
+                </button>
             </div>
         </div>
 

@@ -26,3 +26,7 @@ Route::get('/user/{id}', function (Request $request, $id) {
     $user = App\User::findOrfail($id);
     return $user;
 })->middleware('auth:api');
+
+Route::post('users', function (Request $request) {
+    return $request;
+})->middleware('auth:api');

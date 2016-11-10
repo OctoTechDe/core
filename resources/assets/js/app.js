@@ -6,10 +6,11 @@
 require('./bootstrap');
 
 /**
- * Import Vue and VueRouter
+ * Import Vue, VueRouter and VueForm
  */
 
 import Vue from 'vue'
+import VueForm from 'vform'
 import VueRouter from 'vue-router'
 
 /**
@@ -20,8 +21,10 @@ import UsersShow from './components/users/Show.vue'
 import UsersCreate from './components/users/Create.vue'
 
 /**
- * Use VueRouter
+ * Use VueRouter and VueForm
  */
+
+Vue.use(VueForm)
 Vue.use(VueRouter)
 
 /**

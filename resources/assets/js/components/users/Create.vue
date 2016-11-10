@@ -22,24 +22,31 @@
                 New User
             </div>
             <div class="card-block">
-                <div class="form-group">
+
+            <form @submit.prevent="login" class="form-horizontal">
+
+                <div class="form-group" :class="{'has-error': form.errors.has('username')}">
                     <label for="name">Name</label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="icon-user"></i></span>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter name">
+                        <input v-model="form.username" type="text" name="username" class="form-control">
+                        <has-error :form="form" field="username"></has-error>
                     </div>
                 </div>
-                <div class="form-group">
+                
+                <div class="form-group" :class="{'has-error': form.errors.has('email')}">
                     <label for="name">Email</label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="icon-envelope"></i></span>
-                        <input type="text" id="email" name="email" class="form-control" placeholder="Enter email">
+                        <input v-model="form.email" type="text" name="email" class="form-control">
+                        <has-error :form="form" field="email"></has-error>
                     </div>
                 </div>
+
                 <div class="alert alert-info" role="alert">
                     <i class="icon-info"></i> The password will be automatically generated and send to the user. The user can change the given password after first login.
                 </div>
-                <button type="button" class="btn btn-primary">Create User</button>
+                <button :disabled="form.busy" type="submit" class="btn btn-primary">Log In</button>
             </div>
         </div>
 
@@ -54,22 +61,21 @@
 <script>
 
     export default {
-        data: function () {
+        data: function() {
             return {
-                user: ''
-            };
-        },
+            // Create a new form instance
+            form: this.$form({
+                username: '',
+                email: ''
+            })
+        }
+    },
 
-        created: function () {
-            this.fetchUser();
-        },
-
-        methods: {
-            fetchUser: function () {
-                this.$http.get('/api/user')
-                        .then(response => {
-                    this.user = response.data;
-                });
+  methods: {
+    login() {
+      // Submit the form via a POST request
+      this.form.post('api/users')
+        .then(({data}) => console.log(data))
             }
         }
     }
